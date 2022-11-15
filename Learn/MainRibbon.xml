@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui"
+		  onLoad="OnRibbonLoad">
+	<ribbon>
+		<tabs>
+			<tab id="MainTab"
+				 label="年轻人的第一个Excel插件">
+				<group id="FirstGroup"
+					   label="第一组">
+					<button id="Find"
+							label="查找方法"
+							imageMso="FileFind"
+							size="large"
+							onAction="OnFindButtonClicked" />
+				</group>
+			</tab>
+		</tabs>
+	</ribbon>
+</customUI>
