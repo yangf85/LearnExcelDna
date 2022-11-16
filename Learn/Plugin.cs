@@ -21,6 +21,14 @@ namespace Learn
         public void AutoOpen()
         {
             IntelliSenseServer.Install();
+            App.WorkbookOpen += w =>
+            {
+                MenuManager.LoadMenu();
+            };
+            App.WorkbookBeforeClose += (Excel.Workbook w, ref bool flag) =>
+            {
+                MenuManager.UnloadMenu();
+            };
         }
     }
 }

@@ -31,5 +31,10 @@ namespace Learn
                 }
             }
         }
+
+        public void OnShowPanePressed(IRibbonControl control, bool flag)
+        {
+            PaneManager.Visible(flag);
+        }
     }
 }

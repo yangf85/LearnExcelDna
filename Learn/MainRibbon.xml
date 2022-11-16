@@ -13,6 +13,14 @@
 							size="large"
 							onAction="OnFindButtonClicked" />
 				</group>
+				<group id="SecondGroup"
+					   label="第二组">
+					<toggleButton id="ShowPane"
+								  label="显示窗格"
+								  imageMso="FreezePanes"
+								  size="large"
+								  onAction="OnShowPanePressed" />
+				</group>
 			</tab>
 		</tabs>
 	</ribbon>
