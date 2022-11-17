@@ -3,7 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Interop;
+using System.Windows.Threading;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Learn
@@ -32,9 +35,23 @@ namespace Learn
             }
         }
 
-        public void OnShowPanePressed(IRibbonControl control, bool flag)
+        public void OnShowWindowButtonClicked(IRibbonControl control)
         {
-            PaneManager.Visible(flag);
+            //var win = new MainWindow();
+            //win.Show(Control.FromHandle(ExcelDna.Integration.ExcelDnaUtil.WindowHandle));
+
+            Thread thread = new Thread(() =>
+            {
+                var UI = new WpfWindow();
+                var Helper = new WindowInteropHelper(UI);
+                Helper.Owner = ExcelDna.Integration.ExcelDnaUtil.WindowHandle;
+                UI.Show();
+                UI.Closed += (a, b) => { UI.Dispatcher.InvokeShutdown(); };
+                Dispatcher.Run();
+            })
+            { IsBackground = true };
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
         }
     }
 }

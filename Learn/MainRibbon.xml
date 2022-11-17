@@ -20,6 +20,11 @@
 								  imageMso="FreezePanes"
 								  size="large"
 								  onAction="OnShowPanePressed" />
+					<button id="ShowWindow"
+							onAction="OnShowWindowButtonClicked"
+							size="large"
+							label="显示窗口"
+							imageMso="GroupWindowAccess" />
 				</group>
 			</tab>
 		</tabs>

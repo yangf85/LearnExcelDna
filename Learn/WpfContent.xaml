@@ -1,0 +1,25 @@
+﻿<UserControl
+    x:Class="Learn.WpfContent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Learn"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Background="White"
+    FontSize="20"
+    mc:Ignorable="d">
+    <Grid>
+        <StackPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Vertical">
+            <TextBlock x:Name="BlockName" Text="年轻人的插件" />
+            <Button
+                Height="30"
+                Margin="0,10"
+                Click="Button_Click" />
+        </StackPanel>
+    </Grid>
+</UserControl>
